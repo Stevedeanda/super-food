@@ -5,7 +5,7 @@
 <template>
 	<main>
 		<section>
-			<h1>Welcome!</h1>
+			<h1>Welcome!!!!!!</h1>
 
 			<MonsterForm />
 		</section>
