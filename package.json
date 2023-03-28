@@ -5,7 +5,7 @@
    "scripts": {
       "dev": "vite",
       "build": "vite build",
-      "deploy": "surge dist",
+      "deploy": "vite build && cp dist/index.html dist/200.html && surge dist",
       "build:dev": "vite build --mode development",
       "preview": "vite preview",
       "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
