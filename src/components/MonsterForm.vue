@@ -1,13 +1,26 @@
 <script setup>
 	import { reactive } from 'vue';
+	import { useMonsterStore } from '@/stores/monsters';
+
+	const monsters = useMonsterStore();
 
 	const monster = reactive({
-		name: 'Steve',
-		age: 33,
+		name: '',
+		age: '',
 	});
 
 	function saved() {
-		alert('save');
+		const record = {
+			name: monster.name,
+			age: monster.age,
+		};
+		monsters.add(record);
+		clear();
+	}
+
+	function clear() {
+		monster.name = '';
+		monster.age = '';
 	}
 </script>
 
@@ -23,4 +36,8 @@
 		</div>
 		<button type="submit">Submit</button>
 	</form>
+
+	<ul>
+		<li v-for="monster in monsters.list">{{ monster.name }}</li>
+	</ul>
 </template>
